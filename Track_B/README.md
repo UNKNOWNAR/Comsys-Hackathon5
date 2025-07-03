@@ -1,74 +1,129 @@
-# COMSYS Hackathon-5, 2025 – Overview  
-**Face Intelligence Challenge – Task A & B Submission**
+# Face Verification using Siamese Networks  
+**COMSYS Hackathon-5, 2025 – Task B**  
 
-This repository contains our solutions to the **COMSYS Hackathon-5** organized around real-world facial intelligence problems. The competition features two primary tasks centered on deep learning for face-based classification and verification under challenging visual conditions.
+This repository contains our submission for Task B: Face Verification.  
+The objective is to verify whether a distorted face image and a clean image belong to the same identity using a Siamese network trained on the FACECOM dataset.
 
----
+## 📂 Folder Structure
 
-## 🧠 Hackathon Challenge Overview
-
-### 🔹 Task A: Gender Classification  
-- **Objective**: Predict the gender (Male/Female) from face images under visual degradation such as blur, rain, fog, or low light.  
-- **Type**: Binary Classification  
-- **Input**: Images in `train/female`, `train/male` and similarly for validation  
-- **Evaluation Metrics**: Accuracy, Precision, Recall, F1 Score  
-
-### 🔹 Task B: Face Verification  
-- **Objective**: Verify whether two face images — one clean and one distorted — belong to the same identity.  
-- **Type**: One-vs-One Matching (Binary Verification) and One-vs-Many (Gallery Classification)  
-- **Input**: Each identity is a folder with clean images and a `distortion/` subfolder  
-- **Evaluation Metrics**: Accuracy, Precision, Recall, F1 Score, ROC AUC, Gallery Top-1 Accuracy, Macro F1  
-
----
-
-## ✅ Submission Checklist  
-As per the hackathon guidelines, we have included:
-
-- 📊 Evaluation metrics on the validation dataset for both tasks  
-- 📁 Well-structured code notebooks for training and testing  
-- 📦 Pretrained model weights (shared separately via Drive link)  
-- 📝 README files for each track (Track_A and Track_B)  
-- ✅ Test scripts accepting custom test folder inputs
-
----
-
-## 🛠️ Our Solution Highlights
-
-### 🟢 Track A – Gender Classification  
-- **Model**: EfficientNetB0  
-- **Loss Function**: Focal Loss to address class imbalance  
-- **Techniques**:
-  - Strong data augmentation
-  - Threshold tuning on F1-score
-  - Fine-tuning on hard examples  
-- **Result**: High F1 score on validation with robust generalization under adverse conditions
-
-### 🔵 Track B – Face Verification  
-- **Model**: Siamese Network with ResNet-18 Backbone  
-- **Modes**:
-  - Standard RGB-based embedding similarity
-  - Optional DCT/FFT attention-based evaluation (for spectral enhancement)  
-- **Insights**:
-  - DCT attention provided tighter t-SNE clusters but underperformed in actual matching
-  - Cosine similarity used for gallery classification and binary verification  
-- **Result**: Reliable performance across multiple distortion types; evaluation results saved and visualized
+comsys-hackathon5/Track_B/
+├── README.md
+├── requirements.txt
+├── notebooks/
+│ ├── facecom_modeltesting_withdct.ipynb # Evaluation with DCT-based attention
+│ └── facecom-modeltesting.ipynb # Standard evaluation (recommended)
 
 
-## 📞 Contact & Team Info
+## 📦 Dataset Setup
 
-👨‍💻 **Team Members**:
-- Arinjay Sarkar  
-- Srinjoy Mukherjee  
-- Gourav Roy  
+Place the FACECOM dataset in this structure:
+Comys_Hackathon5/Task_B/
+├── train/
+│ ├── Identity_001/
+│ └── Identity_002/
+│ └── distortion/
+├── val/
+│ ├── Identity_003/
+│ └── Identity_004/
+└── distortion/
 
-🏫 **Institution**: *[Jadavpur University]*  
-📧 **Emails**:
-- amiarinjaysarkar@gmail.com  
-- srinjoymukherjee2005@gmail.com  
-- gouravroy2110@gmail.com  
+or the Test directory as per your requirements
 
----
+Each identity contains clean images and a `distortion/` subfolder with distorted versions.
+
+## 🧠 Model Architecture
+
+We use a Siamese Network architecture with **ResNet‑18** as the feature extractor backbone. Two parallel image branches share weights and output embeddings, compared using either:
+- Cosine similarity (gallery) 
+- Verification head (binary classification)
+
+We trained two versions:
+1. **Baseline** – Standard Siamese model using RGB image pairs
+2. **DCT-Attention** – Siamese model evaluated with FFT/DCT-based frequency-domain attention maps
+
+## 🧪 How to Run
+
+1. Open evaluation notebooks:  
+   - `facecom_modeltesting.ipynb` 
+   - `facecom_modeltesting_withdct.ipynb` 
+
+## 📌 Current Status of Notebooks
+
+The provided notebooks are preloaded with our final evaluation results on the validation set.  
+🔒 **Note**: The validation set was **strictly used for evaluation only** — no training or fine-tuning was performed on it.
+
+
+## ✅ Evaluation Modes
+
+**1. Gallery/Probe Classification**  
+- Clean images as gallery  
+- Distorted queries compared using cosine similarity  
+- *Metrics:* Top‑1 Accuracy, Macro F1-score  
+
+**2. Binary Verification**  
+- Pairs classified as "same identity" or "different"  
+- *Metrics:* Accuracy, Precision, Recall, F1-score, ROC AUC  
+
+## ⚠️ About DCT Attention Evaluation
+
+We explored FFT/DCT attention maps for enhancing embeddings in the frequency domain. These techniques can emphasize high-frequency spatial details — potentially improving the model’s focus on fine-grained facial features and texture patterns, which are often critical in distinguishing identities.
+
+However, despite their theoretical appeal, our experiments highlighted several practical limitations:
+
+**Limitations of DCT-based Evaluation:**
+- High storage overhead due to the need to cache attention maps for each image
+- Increased computational cost during inference
+- Reduced robustness under distortions such as blur, compression, or lighting changes
+- Inconsistency between training and inference representations (attention not used during training)
+
+📌 *Despite promising t‑SNE visualizations showing tighter embedding clusters, DCT attention yielded slightly lower verification performance and less reliable cosine similarity scores in distorted scenarios.*
+
+
+## 📊 Validation Results
+
+### ✅ Standard Siamese (Recommended)
+| Metric           | Value   |
+|------------------|---------|
+| Top‑1 Accuracy   | 0.7251  |
+| Precision        | 0.8035  |
+| Recall           | 0.5960  |
+| F1 Score         | 0.6844  |
+| ROC AUC          | 0.8423  |
+| Gallery Accuracy | 0.5272  |
+| Gallery Macro F1 | 0.6396  |
+
+### ⚙️ With DCT Attention
+| Metric           | Value   |
+|------------------|---------|
+| Top‑1 Accuracy   | 0.7167  |
+| Precision        | 0.7939  |
+| Recall           | 0.5855  |
+| F1 Score         | 0.6739  |
+| ROC AUC          | 0.8396  |
+| Gallery Accuracy | 0.4754  |
+| Gallery Macro F1 | 0.5742  |
+
+## 🔒 Validation Usage Policy
+- The validation set was used only for final evaluation by us to provide us a sanity check
+- No training/fine-tuning was performed on validation data  
+- All evaluation results are saved and reproducible through provided notebooks  
+
+## 📌 Key Features
+- ResNet‑18 backbone  
+- Siamese pairwise training with mixed-precision  
+- Evaluation on both binary verification and gallery-classification tasks  
+- Optional FFT/DCT attention mechanism  
+- Cosine similarity scoring and threshold optimization  
+- Comprehensive plots provided to allow for better inferencing  
+
+## 📦 Model Weights
+⚠️ *Due to size restrictions, model weights are not included in the repository. Please download them from our shared drive link (provided during submission) and place them appropriately.*
+
+## 📞 Contact
+For queries, contact:  
+amiarinjaysarkar@gmail.com,  
+srinjoymukherjee2005@gmail.com,  
+gouravroy2110@gmail.com  
 
 ## 📝 License
-This repository is submitted as part of **COMSYS Hackathon-5, 2025** for Task A (Gender Classification) and Task B (Face Verification).  
-All work is original and complies with the competition guidelines.
+This repository is part of COMSYS Hackathon-5, 2025 submission for Track B.

@@ -44,7 +44,7 @@ Comys_Hackathon5/Task_A/
 If you want to skip training:
 
 1. **Download** the pretrained file:
-   - [`gender_classifier.weights.h5`](link-to-download) – model weights
+   - [`gender_classifier.weights.h5`](https://drive.google.com/file/d/1Qhe82MCuXmeOzOlbzOIxf8UGFAM8xfcb/view?usp=drive_link) – model weights
 
 Comsys-Hackathon5/
 └── Track_A/

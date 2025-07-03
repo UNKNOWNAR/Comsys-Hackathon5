@@ -10,8 +10,8 @@ comsys-hackathon5/Track_B/
 ├── README.md
 ├── requirements.txt
 ├── notebooks/
-│ ├── facecom_modeltesting_withdct.ipynb # Evaluation with DCT-based attention
-│ └── facecom-modeltesting.ipynb # Standard evaluation (recommended)
+├── facecom_modeltesting_withdct.ipynb # Evaluation with DCT-based attention
+└── facecom-modeltesting.ipynb # Standard evaluation (recommended)
 
 
 ## 📦 Dataset Setup

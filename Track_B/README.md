@@ -5,18 +5,20 @@ This repository contains our submission for Task B: Face Verification.
 The objective is to verify whether a distorted face image and a clean image belong to the same identity using a Siamese network trained on the FACECOM dataset.
 
 ## 📂 Folder Structure
-
+```
 comsys-hackathon5/Track_B/
 ├── README.md
 ├── requirements.txt
 ├── notebooks/
 ├── facecom_modeltesting_withdct.ipynb # Evaluation with DCT-based attention
 └── facecom-modeltesting.ipynb # Standard evaluation (recommended)
+```
 
 
 ## 📦 Dataset Setup
 
 Place the FACECOM dataset in this structure:
+```
 Comys_Hackathon5/Task_B/
 ├── train/
 │ ├── Identity_001/
@@ -26,6 +28,7 @@ Comys_Hackathon5/Task_B/
 │ ├── Identity_003/
 │ └── Identity_004/
 └── distortion/
+```
 
 or the Test directory as per your requirements
 

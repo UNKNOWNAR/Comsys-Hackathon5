@@ -34,7 +34,7 @@ Comys_Hackathon5/Task_A/
         └── male/
 
 ````
-##🏋️‍♂️ Model Testing
+## **🏋️‍♂️ Model Testing**
 
 
 ### **Option 1: Download Pretrained Model and Threshold**

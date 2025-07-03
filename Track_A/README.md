@@ -9,9 +9,7 @@ The goal is to build a robust deep learning model that can predict gender (Femal
 
 ## 📂 Folder Structure
 
-```
----
-comsys-hackathon5/
+comsys-hackathon5/Track_A
 ├── README.md
 ├── requirements.txt
 ├── notebooks/
@@ -20,10 +18,9 @@ comsys-hackathon5/
 │ ├── gender_classifier.weights.h5 # Model weights (NOT committed; see below)
 │ └── female_threshold.txt # Saved threshold after tuning
 └── .gitignore
----
 ````
 
-
+````
 ## 📦 Dataset
 
 Download and place the FACECOM dataset in this structure:

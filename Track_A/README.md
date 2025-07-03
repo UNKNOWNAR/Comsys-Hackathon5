@@ -34,7 +34,7 @@ Comys_Hackathon5/Task_A/
         └── male/
 
 ````
- How to Run
+## How to Run
 ````
 1. Open `notebooks/submission_notebook.ipynb` in Jupyter or Kaggle.
 2. Run all cells – it will:

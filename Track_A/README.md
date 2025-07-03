@@ -37,45 +37,36 @@ Comys_Hackathon5/Task_A/
 🏋️‍♂️ Model Testing
 
 ````
-Option 1: Download Pretrained Model and Threshold
-If you want to skip training, you can use the provided pretrained model and threshold:
+### **Option 1: Download Pretrained Model and Threshold**
 
-Download the model weights:
-Download gender_classifier.weights.h5
+If you want to skip training:
 
-Download the optimal threshold:
-Download female_threshold.txt
+1. **Download** the pretrained file:
+   - [`gender_classifier.weights.h5`](link-to-download) – model weights
 
-Place both files in the models/ directory of your project:
+Comsys-Hackathon5/
+└── Track_A/
+├── models/
+│ ├── gender_classifier.weights.h5
+│ └── female_threshold.txt
+Place the file in the models/ directory of your project:
+for testing, use: `track-a-test-script.ipynb`
 
-text
-C:\Users\amiar\Downloads\Comsys-Hackathon5\Track_A\models\
-    gender_classifier.weights.h5
-    female_threshold.txt
-Option 2: Train the Model Yourself
+### **Option 2: Train the Model Yourself**
+
+1. **Open the notebook**:
 Open the notebook:
-C:\Users\amiar\Downloads\Comsys-Hackathon5\Track_A\notebooks\track_a_gender-classification.ipynb
-(or, for testing, use track-a-test-script.ipynb)
+Comsys-Hackathon5\Track_A\notebooks\track_a_gender-classification.ipynb
+*(Or, for testing, use: `track-a-test-script.ipynb`)*
 
-Run all cells – the notebook will:
+2. **Run all cells** – the notebook will:
+- Preprocess and augment the data
+- Train the model using focal loss
+- Evaluate performance (accuracy, recall, F1-score, confusion matrix)
+- Fine-tune on hard samples
+- Find and save the optimal threshold for the female class
 
-Preprocess and augment the data
-
-Train the model using focal loss
-
-Evaluate performance (accuracy, recall, F1-score, confusion matrix)
-
-Fine-tune on hard samples
-
-Find the best threshold for the female class
-
-After training completes:
-
-The trained model weights will be saved as
-C:\Users\amiar\Downloads\Comsys-Hackathon5\Track_A\models\gender_classifier.weights.h5
-
-The optimal threshold will be saved as
-C:\Users\amiar\Downloads\Comsys-Hackathon5\Track_A\models\female_threshold.txt
+3. **After training completes**, the files will be saved automatically:
 
 Folder Structure Reminder:
 

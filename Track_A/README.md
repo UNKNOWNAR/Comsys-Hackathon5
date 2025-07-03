@@ -15,7 +15,8 @@ comsys-hackathon5/Track_A
 │ └── track-a-test-script.ipynb
 │ └── track_a_gender-classification.ipynb
 ├── models/
-│ ├── gender_classifier.weights.h5 # Model weights [Download weights](https://drive.google.com/file/d/1Qhe82MCuXmeOzOlbzOIxf8UGFAM8xfcb/view?usp=drive_link)
+│ ├── gender_classifier.weights.h5 # Model weights Model weights download:**  
+[Download gender_classifier.weights.h5](https://drive.google.com/file/d/1Qhe82MCuXmeOzOlbzOIxf8UGFAM8xfcb/view?usp=drive_link)
 │ └── female_threshold.txt # Saved threshold after tuning
 └── .gitignore
 ````

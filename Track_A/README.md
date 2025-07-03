@@ -33,10 +33,9 @@ Comys_Hackathon5/Task_A/
     └── val/
         ├── female/
         └── male/
-```
 
----
-
+````
+````
 ## 🧪 How to Run
 
 1. Open `notebooks/submission_notebook.ipynb` in Jupyter or Kaggle.

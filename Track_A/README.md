@@ -51,9 +51,9 @@ Comsys-Hackathon5/
 │ └── female_threshold.txt
 Place the file in the models/ directory of your project:
 for testing, use: `track-a-test-script.ipynb`
-
+````
 ### **Option 2: Train the Model Yourself**
-
+````
 1. **Open the notebook**:
 Open the notebook:
 Comsys-Hackathon5\Track_A\notebooks\track_a_gender-classification.ipynb
@@ -82,35 +82,15 @@ Comsys-Hackathon5/
     └── ...
 Choose either option above. If you train your own model, make sure the weights and threshold files are saved in the models/ directory as shown.
 ````
-
-Using the Trained Model
-
-To reload and test:
-
-```python
-# Rebuild model architecture
-model = build_model()
-# Load trained weights
-model.load_weights('models/gender_classifier.weights.h5')
-# Load saved threshold
-with open('models/female_threshold.txt', 'r') as f:
-    female_thresh = float(f.read().strip())
-```
-
-Use `predict_on_directory_with_threshold(test_dir, female_thresh)`
-to get predictions on new test images.
-
----
-
 ## 📌 Key Features
-
+````
 * EfficientNetB0 backbone for feature extraction
 * Focal Loss to handle class imbalance
 * Aggressive data augmentation for robustness
 * Fine-tuning on hard samples
 * Threshold tuning to improve F1-score
+````
 
----
 
 ## 📊 Results
 
@@ -126,7 +106,6 @@ Please download from our shared cloud link (e.g., Google Drive) and place them i
 
 ```
 models/gender_classifier.weights.h5
-models/female_threshold.txt
 ```
 
 ---

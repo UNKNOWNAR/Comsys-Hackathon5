@@ -13,9 +13,10 @@ comsys-hackathon5/Track_A
 ├── README.md
 ├── requirements.txt
 ├── notebooks/
-│ └── submission_notebook.ipynb
+│ └── track-a-test-script.ipynb
+│ └── track_a_gender-classification.ipynb
 ├── models/
-│ ├── gender_classifier.weights.h5 # Model weights (NOT committed; see below)
+│ ├── gender_classifier.weights.h5 # Model weights (NOT committed; see below) so .txt files available
 │ └── female_threshold.txt # Saved threshold after tuning
 └── .gitignore
 ````

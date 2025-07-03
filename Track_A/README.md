@@ -36,9 +36,9 @@ Comys_Hackathon5/Task_A/
 ````
 🏋️‍♂️ Model Testing
 
-````
-### **Option 1: Download Pretrained Model and Threshold**
 
+### **Option 1: Download Pretrained Model and Threshold**
+````
 If you want to skip training:
 
 1. **Download** the pretrained file:

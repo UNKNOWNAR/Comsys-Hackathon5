@@ -5,9 +5,9 @@
 This repository contains our submission for **Task A: Gender Classification**.  
 The goal is to build a robust deep learning model that can predict gender (Female/Male) from face images captured under challenging conditions (blur, fog, low light, rain, etc.) using the **FACECOM** dataset.
 ````
-````
-## 📂 Folder Structure
 
+## 📂 Folder Structure
+````
 comsys-hackathon5/Track_A
 ├── README.md
 ├── requirements.txt

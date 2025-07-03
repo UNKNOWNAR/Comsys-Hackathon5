@@ -1,5 +1,3 @@
-Got it! Here’s a **complete single `README.md` file** you can copy-paste at once (just copy everything between the lines):
-
 ---
 
 ```markdown
@@ -14,7 +12,7 @@ The goal is to build a robust deep learning model that can predict gender (Femal
 ## 📂 Folder Structure
 
 ```
-
+---
 comsys-hackathon5/
 ├── README.md
 ├── requirements.txt
@@ -24,34 +22,16 @@ comsys-hackathon5/
 │ ├── gender_classifier.weights.h5 # Model weights (NOT committed; see below)
 │ └── female_threshold.txt # Saved threshold after tuning
 └── .gitignore
-
+---
 ````
 
----
-
-## ⚙️ Setup & Dependencies
-
-Install dependencies:
-```bash
-pip install -r requirements.txt
-````
-
-Dependencies include:
-
-* TensorFlow >= 2.8
-* scikit-learn
-* numpy
-* matplotlib
-* seaborn
-
----
 
 ## 📦 Dataset
 
 Download and place the FACECOM dataset in this structure:
 
 ```
-/kaggle/input/facecom/Comys_Hackathon5/Task_A/
+Comys_Hackathon5/Task_A/
     ├── train/
     │   ├── female/
     │   └── male/

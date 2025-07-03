@@ -34,19 +34,62 @@ Comys_Hackathon5/Task_A/
         └── male/
 
 ````
-## How to Run
+🏋️‍♂️ Model Testing
+
 ````
-1. Open `notebooks/submission_notebook.ipynb` in Jupyter or Kaggle.
-2. Run all cells – it will:
+Option 1: Download Pretrained Model and Threshold
+If you want to skip training, you can use the provided pretrained model and threshold:
 
-   * Preprocess data & augment images
-   * Train the model using focal loss
-   * Evaluate performance (accuracy, recall, F1-score, confusion matrix)
-   * Fine-tune on hard samples
-   * Find the best threshold for the female class
-3. Save the trained model weights in `models/gender_classifier.weights.h5`.
-4. Save the optimal threshold in `models/female_threshold.txt`.
+Download the model weights:
+Download gender_classifier.weights.h5
 
+Download the optimal threshold:
+Download female_threshold.txt
+
+Place both files in the models/ directory of your project:
+
+text
+C:\Users\amiar\Downloads\Comsys-Hackathon5\Track_A\models\
+    gender_classifier.weights.h5
+    female_threshold.txt
+Option 2: Train the Model Yourself
+Open the notebook:
+C:\Users\amiar\Downloads\Comsys-Hackathon5\Track_A\notebooks\track_a_gender-classification.ipynb
+(or, for testing, use track-a-test-script.ipynb)
+
+Run all cells – the notebook will:
+
+Preprocess and augment the data
+
+Train the model using focal loss
+
+Evaluate performance (accuracy, recall, F1-score, confusion matrix)
+
+Fine-tune on hard samples
+
+Find the best threshold for the female class
+
+After training completes:
+
+The trained model weights will be saved as
+C:\Users\amiar\Downloads\Comsys-Hackathon5\Track_A\models\gender_classifier.weights.h5
+
+The optimal threshold will be saved as
+C:\Users\amiar\Downloads\Comsys-Hackathon5\Track_A\models\female_threshold.txt
+
+Folder Structure Reminder:
+
+text
+Comsys-Hackathon5/
+└── Track_A/
+    ├── notebooks/
+    │   ├── track_a_gender-classification.ipynb
+    │   └── track-a-test-script.ipynb
+    ├── models/
+    │   ├── gender_classifier.weights.h5
+    │   └── female_threshold.txt
+    └── ...
+Choose either option above. If you train your own model, make sure the weights and threshold files are saved in the models/ directory as shown.
 ````
 
 Using the Trained Model

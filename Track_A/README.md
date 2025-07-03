@@ -1,5 +1,5 @@
 ```markdown
-# 🚀 Gender Classification under Adverse Visual Conditions
+ Gender Classification under Adverse Visual Conditions
 **COMSYS Hackathon-5, 2025 – Task A**
 
 This repository contains our submission for **Task A: Gender Classification**.  
@@ -20,12 +20,11 @@ comsys-hackathon5/Track_A
 └── .gitignore
 ````
 
-````
 ## 📦 Dataset
 
 Download and place the FACECOM dataset in this structure:
 
-```
+````
 Comys_Hackathon5/Task_A/
     ├── train/
     │   ├── female/
@@ -35,9 +34,8 @@ Comys_Hackathon5/Task_A/
         └── male/
 
 ````
+ How to Run
 ````
-## 🧪 How to Run
-
 1. Open `notebooks/submission_notebook.ipynb` in Jupyter or Kaggle.
 2. Run all cells – it will:
 
@@ -49,9 +47,9 @@ Comys_Hackathon5/Task_A/
 3. Save the trained model weights in `models/gender_classifier.weights.h5`.
 4. Save the optimal threshold in `models/female_threshold.txt`.
 
----
+````
 
-## ✅ Using the Trained Model
+Using the Trained Model
 
 To reload and test:
 

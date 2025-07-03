@@ -19,12 +19,10 @@ comsys-hackathon5/
 ├── README.md
 ├── requirements.txt
 ├── notebooks/
-│   └── submission\_notebook.ipynb
+│ └── submission_notebook.ipynb
 ├── models/
-│   ├── gender\_classifier.weights.h5        # Model weights (NOT committed; see below)
-│   └── female\_threshold.txt                # Saved threshold after tuning
-├── summary/
-│   └── technical\_summary.pdf
+│ ├── gender_classifier.weights.h5 # Model weights (NOT committed; see below)
+│ └── female_threshold.txt # Saved threshold after tuning
 └── .gitignore
 
 ````
@@ -129,7 +127,7 @@ models/female_threshold.txt
 
 ## 📞 Contact
 
-For questions: **amiarinjaysarkar@gmail.com**
+For questions: **amiarinjaysarkar@gmail.com , srinjoymukherjee2005@gmail.com, gouravroy2110@gmail.com**
 
 ---
 

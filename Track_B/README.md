@@ -81,6 +81,30 @@ However, despite their theoretical appeal, our experiments highlighted several p
 
 📌 *Despite promising t‑SNE visualizations showing tighter embedding clusters, DCT attention yielded slightly lower verification performance and less reliable cosine similarity scores in distorted scenarios.*
 
+## 🏋️ Training Set Metrics - Evaluated on a Subset of 'train' (Without DCT Attention)
+
+The following metrics were recorded on the training set when using DCT-based attention maps:
+
+| Metric         | Value   |
+|----------------|---------|
+| Top‑1 Accuracy | 0.9654  |
+| Precision      | 0.9445  |
+| Recall         | 0.9890  |
+| F1 Score       | 0.9662  |
+| ROC AUC        | 0.9931  |
+
+## 🏋️ Training Set Metrics - Evaluated on a Subset of 'train'(With DCT Attention)
+
+The following metrics were recorded on the training set when using DCT-based attention maps:
+
+| Metric         | Value   |
+|----------------|---------|
+| Top‑1 Accuracy | 0.9535  |
+| Precision      | 0.9318  |
+| Recall         | 0.9786  |
+| F1 Score       | 0.9546  |
+| ROC AUC        | 0.9897  |
+
 
 ## 📊 Validation Results
 
@@ -109,7 +133,7 @@ However, despite their theoretical appeal, our experiments highlighted several p
 ## 🔒 Validation Usage Policy
 - The validation set was used only for final evaluation by us to provide us a sanity check
 - No training/fine-tuning was performed on validation data  
-- All evaluation results are saved and reproducible through provided notebooks  
+- All evaluation results are saved and reproducible through the provided notebooks  
 
 ## 📌 Key Features
 - ResNet‑18 backbone  
@@ -117,7 +141,7 @@ However, despite their theoretical appeal, our experiments highlighted several p
 - Evaluation on both binary verification and gallery-classification tasks  
 - Optional FFT/DCT attention mechanism  
 - Cosine similarity scoring and threshold optimization  
-- Comprehensive plots provided to allow for better inferencing  
+- Comprehensive plots provided to allow for better inference  
 
 ## 📦 Model Weights
 ⚠️ *Due to size restrictions, model weights are not included in the repository. Please download them from our shared drive link (provided during submission) and place them appropriately.*
